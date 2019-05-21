@@ -1,0 +1,16 @@
+<h1><strong>My tasks</strong></h1>
+<br>
+<% @tasks.each do |task| %>
+  <h2><%= link_to task.title, task_path(task.id) %>
+    <%=link_to "delete", task_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+      <i class="far fa-trash-alt"></i>
+  </h2>
+<% end %>
+
+
+<br>
+<br>
+
+<%= link_to "+ Add a new task", new_path %>
